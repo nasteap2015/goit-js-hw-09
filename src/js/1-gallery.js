@@ -1,8 +1,5 @@
 'use strict';
 
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
-
 const images = [
   {
     preview:
@@ -73,7 +70,10 @@ const gallery = document.querySelector('.gallery');
 const markup = images
   .flatMap(
     ({ preview, original, description }) =>
-      `<li class="gallery-item"> <a class="gallery-link" href="${original}"> <img class="gallery-image" src="${preview}" data-source="${original}" alt="${description}"/> </a> </li>`
+      `<li class="gallery-item"> <a class="gallery-link" href="${original}"> <img class="gallery-image" src="${preview}" alt="${description}"/> </a> </li>`
   )
   .join('');
 gallery.insertAdjacentHTML('afterbegin', markup);
+
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
